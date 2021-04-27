@@ -54,6 +54,7 @@ put_object <-
 function(file, 
          object, 
          bucket, 
+         use_https,
          multipart = FALSE, 
          acl = c("private", "public-read", "public-read-write", 
                  "aws-exec-read", "authenticated-read", 
@@ -142,7 +143,7 @@ function(file,
                     key = Sys.getenv("AWS_ACCESS_KEY_ID"), 
                     secret = Sys.getenv("AWS_SECRET_ACCESS_KEY"), 
                     session_token = NULL,
-                    use_https = FALSE)
+                    use_https = use_https)
         return(TRUE)
     }
 }
